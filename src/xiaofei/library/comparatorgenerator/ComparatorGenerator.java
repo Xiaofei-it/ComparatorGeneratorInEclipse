@@ -52,6 +52,10 @@ public class ComparatorGenerator<T> {
 		}
 	}
 	
+	public ComparatorGenerator<T> addCriterion(int priority, String fieldName) {
+		return addCriterion(priority, fieldName, Order.ASCENDING);
+	}
+	
 	public ComparatorGenerator<T> addCriterion(int priority, String fieldName, Order order) {
 		Field field = TypeUtils.getField(clazz, fieldName);
 		if (field == null) {
